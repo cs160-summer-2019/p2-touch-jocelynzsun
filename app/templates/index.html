@@ -88,29 +88,33 @@
       
       var rotate = document.getElementById('rotate-box');
       var mc = new Hammer(rotate);
+      mc.get('rotate').set({enable: true});
       mc.on("rotate", function(ev) {
         console.log("rotated");
+        rotate.style.transform = 'rotate(45deg)';
       });
       
       var pinch = document.getElementById('pinch-box');
       var mc = new Hammer(pinch);
+      mc.get('pinch').set({enable: true});
       mc.on("pinch", function(ev) {
         console.log("pinched");
-        
+        pinch.style.width = "200px";
       });
       
       var press = document.getElementById('press-box');
       var mc = new Hammer(press);
       mc.on("press", function(ev) {
         console.log("pressed");
-        press.style.background="purple";
+        press.style.width = "200px";
+        press.style.height = "200px";
       });
       
       var pan = document.getElementById('pan-box');
       var mc = new Hammer(pan);
       mc.on("pan", function(ev) {
         console.log("panned");
-        pan.style.width = "200px";
+        pan.style.alignItems = 'flex-end';
       });
       
       var tap = document.getElementById('tap-box');
