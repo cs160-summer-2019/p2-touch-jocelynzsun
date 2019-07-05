@@ -84,7 +84,50 @@
 		</div>
 	</div>
 	<script>
-	  // your solution here
+	  $(document).ready(() => {
+      
+      var rotate = document.getElementById('rotate-box');
+      var mc = new Hammer(rotate);
+      mc.on("rotate", function(ev) {
+        console.log("rotated");
+      });
+      
+      var pinch = document.getElementById('pinch-box');
+      var mc = new Hammer(pinch);
+      mc.on("pinch", function(ev) {
+        console.log("pinched");
+        
+      });
+      
+      var press = document.getElementById('press-box');
+      var mc = new Hammer(press);
+      mc.on("press", function(ev) {
+        console.log("pressed");
+        press.style.background="purple";
+      });
+      
+      var pan = document.getElementById('pan-box');
+      var mc = new Hammer(pan);
+      mc.on("pan", function(ev) {
+        console.log("panned");
+        pan.style.width = "200px";
+      });
+      
+      var tap = document.getElementById('tap-box');
+      var mc = new Hammer(tap);
+      mc.on("tap", function(ev) {
+        console.log("tapped");
+        tap.style.background="green";
+      });
+      
+      var swipe = document.getElementById('swipe-box');
+      var mc = new Hammer(swipe);
+      mc.on("swipe", function(ev) {
+        console.log("swiped");
+        swipe.style.background="purple";
+      })
+      
+    });
   </script>
 </body>
 </html>
